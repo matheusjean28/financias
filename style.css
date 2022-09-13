@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Exo:400,700");
 * {
   padding: 0;
+  font-family: "Exo", sans-serif;
   margin: 0;
   box-sizing: border-box;
 }
@@ -30,6 +32,9 @@ header {
   background-size: cover;
   background-position: center;
   height: 80%;
+  border: #4468b2 solid 1px;
+  border-radius: 100%;
+  padding: 5px;
 }
 
 .notifications {
@@ -48,14 +53,44 @@ header {
   background-position: center;
   height: 80%;
 }
+/* barra de pesquisa */
+.pesquisa {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-left: 10%;
+}
+
+#pesquisaboleto {
+  padding: 15px;
+  border: 1px #4468b2 solid;
+  margin-right: 15px;
+  border-radius: 15px;
+}
+.pesquisa button {
+  height: 100%;
+  background: none;
+  border: none;
+}
+
+.searchImg {
+  display: flex;
+  justify-content: center;
+  height: 50%;
+  background-image: 50%;
+  background-position: center;
+  background-size: cover;
+}
 
 /* filtros no sistema de pesquisa */
 .filtros {
   display: flex;
-  height: 160px;
+  height: 100px;
+  padding: 50px;
   align-items: center;
   justify-content: space-around;
-  border: 1px solid blanchedalmond;
+  border-bottom: 1px solid blanchedalmond;
 }
 
 .dataAtual {
@@ -67,6 +102,9 @@ header {
 }
 .dataFiltro {
   width: 20%;
+}
+.dataposition {
+  text-align: center;
 }
 .datas {
   margin: auto;
@@ -83,12 +121,90 @@ header {
   justify-content: space-between;
 }
 
-
 .valores {
   width: 25%;
 }
 .valores div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.conteinerAreas {
+  height: 100%;
+  display: flex;
+}
+
+.boletosposition {
+  text-align: center;
+  padding: 15px;
+}
+
+.boletos,
+.valoresConteiner {
+  height: 100%;
+}
+
+.boletos {
+  width: 70%;
+  border-right: 1px #4468b2 solid;
+}
+
+.boletos ul {
+  height: 100%;
+  align-items: flex-start;
+}
+.boletos ul li {
+  margin: 15px;
+  border: 1px solid gray;
+  height: 90px;
+  list-style: none;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.item {
+  display: flex;
+  height: 100%;
+  padding: 5px;
+  align-items: center;
+  background-color: aliceblue;
+  justify-content: space-between;
+}
+
+.diaVencimento {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid grey;
+}
+
+.nomeBoleto {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-right: 1px solid grey;
+}
+
+.statusBoleto {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid grey;
+}
+
+.statusBoleto img {
+  background-image: 100%;
+  height: 90%;
+}
+.notificaoBoleto {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aqua;
 }

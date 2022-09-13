@@ -20,6 +20,11 @@
         </div>
     </header>
 
+    <div class="pesquisa">
+        <input name="boletoName" id="pesquisaboleto" placeholder="Procurar por boleto"></input>
+        <button><img class="searchImg" src="/src/search.png"></button>
+        
+    </div>
 
     <!--corpo do projeto -->
     <div class="filtros">
@@ -31,16 +36,16 @@
 
 
         <div class="dataFiltro">
-            <h2>DATA DO FILTRO</h2>
-                <div class="datas">
-                    <div class="dataInicio">
-                        <h3>DATA DE INICIO</h3>
-                        <H4>20/20/20</H4>
-                    </div>
+            <h2 class="dataposition">DATA DO FILTRO</h2>
+            <div class="datas">
+                <div class="dataInicio">
+                    <h3>DATA DE INICIO</h3>
+                    <H4>20/20/20</H4>
+                </div>
 
-                    <div class="dataFinal">
-                        <h3>DATA DE FINAL</h3>
-                        <H4>20/20/20</H4>
+                <div class="dataFinal">
+                    <h3>DATA DE FINAL</h3>
+                    <H4>20/20/20</H4>
                 </div>
             </div>
         </div>
@@ -48,26 +53,61 @@
         <div class="valores">
             <div class="aPagar">
                 <h3>A pagar</h3>
-                <p>122  </p>
+                <p>122 </p>
             </div>
             <div class="caixa">
-                <h3>carteira    </h3>
+                <h3>carteira </h3>
                 <p>R$ 122</p>
             </div>
             <div class="pagamento">
                 <h3>devendo</h3>
                 <p> R$ 122</p>
             </div>
-            <div class="sobra"> 
+            <div class="sobra">
                 <h3>Sobra</h3>
                 <p> R$ 0</p>
             </div>
         </div>
     </div>
-    <section>
+    <section class="conteinerAreas">
         <div class="boletos">
+            <h1 class=boletosposition>BOLETOS</h1>
+            <ul>
+                <li>
+                    <div class="item">
+                        <div class="diaVencimento">
+                            <p>13/09/2022</p>
+                        </div>
+                        <div class="nomeBoleto">
+                            <p>CONTA DE AGUA</p>
+                        </div>
+                        <div class="statusBoleto"><img src="/src/correto.png"></div>
+                        <div class="notificaoBoleto">
+                            <p>imagem do boleto</p>
+                        </div>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="diaVencimento">
+                            <p>13/09/2022</p>
+                        </div>
+                        <div class="nomeBoleto">
+                            <p>CONTA DE ENERGIA</p>
+                        </div>
+                        <div class="statusBoleto"><img src="/src/cronometro.png"></div>
+                        <div class="notificaoBoleto">
+                            <p>imagem do boleto</p>
+                        </div>
+
+                    </div>
+                </li>
+
+
+            </ul>
         </div>
-        <div class="valores">
+        <div class="valoresConteiner">
         </div>
     </section>
 </body>
