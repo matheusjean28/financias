@@ -25,95 +25,37 @@
 
 
     <!--corpo do projeto -->
-    <div class="filtros">
-
-        <div class="dataAtual">
-            <p>HOJE É: 11-22-33</p>
-        </div>
-
-
-        <div class="dataFiltro">
-            <h2 class="dataposition">DATA DO FILTRO</h2>
-            <div class="datas">
-                <div class="dataInicio">
-                    <h3>DATA DE INICIO</h3>
-                    <H4>20/20/20</H4>
-                </div>
-
-                <div class="dataFinal">
-                    <h3>DATA DE FINAL</h3>
-                    <H4>20/20/20</H4>
-                </div>
-            </div>
-        </div>
-
-        <div class="valores">
-            <div class="aPagar">
-                <h3>A pagar</h3>
-                <p>122 </p>
-            </div>
-            <div class="caixa">
-                <h3>wallet </h3>
-                <p>R$ 122</p>
-            </div>
-            <div class="pagamento">
-                <h3>devendo</h3>
-                <p> R$ 122</p>
-            </div>
-            <div class="sobra">
-                <h3>Sobra</h3>
-                <p> R$ 0</p>
-            </div>
-        </div>
-    </div>
 
 
     <section class="conteinerAreas">
         <div class="boletos">
-            <h1 class=boletosposition>BOLETOS</h1>
-            <ul>
-                <li>
-                    <div class="item">
-                        <div class="diaVencimento">
-                            <p>13/09/2022</p>
-                        </div>
-                        <div class="nomeBoleto">
-                            <p>CONTA DE AGUA</p>
-                        </div>
-                        <div class="statusBoleto"><img src="/src/correto.png"></div>
-                        <div class="notificaoBoleto">
-                            <p>imagem do boleto</p>
-                        </div>
+            <div class="filtros">
+                <div class="card-filtros-1"></div>
+                <div class="card-filtros-2"></div>
+            </div>
 
-                    </div>
-                </li>
-                <li>
-                    <div class="item">
-                        <div class="diaVencimento">
-                            <p>13/09/2022</p>
-                        </div>
-                        <div class="nomeBoleto">
-                            <p>CONTA DE ENERGIA</p>
-                        </div>
-                        <div class="statusBoleto"><img src="/src/cronometro.png"></div>
-                        <div class="notificaoBoleto">
-                            <p>imagem do boleto</p>
-                        </div>
+            <div class="vencimentos-boletos">
+                <div class="ordenar">
+                    <p>Seus Boletos</p>
+                        <select name="filtrosBoletosStatus" class="ordenar-conteiner">
+                            <option value="volvo">Data</option>
+                            <option value="saab">Nome</option>
+                            <option value="fiat">Valor</option>
+                            <option value="audi">Pagamento</option>
+                          </select> 
+                </div>
+                <div class="conteiner-boletos-vencimentos">
 
-                    </div>
-                </li>
-
-
-            </ul>
+                </div>
+            </div>
         </div>
-        <div class="valoresConteiner">
-            <div class="conteinerItens">
-                <div class="carteira">
-                    <div class="conta">
-                    <p>Carteira</p>
-                        <h3>Saldo em conta</h3>
-                        <h3> R$ 300,00</h3>
-                    </div>
+        <div class="carteira">
+            <div class="saldo"></div>
+            <div class="despesas">
+                <h3>CONTAS A PAGAR</h3>
+                <div class="vencimentos">
+                    <div class="card1"></div>
+                    <div class="card2"></div>
                 </div>
             </div>
         </div>

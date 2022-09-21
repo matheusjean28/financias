@@ -9,10 +9,11 @@
 body {
   height: 100vh;
   width: 100vw;
+  background-color: rgb(230, 220, 220);
 }
-
 header {
-  height: 80px;
+  margin-top: 5px;
+  height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,21 +21,21 @@ header {
 
 /* barra de pesquisa */
 .pesquisa {
-  height: 80px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: left;
   margin-left: 10%;
+  padding: 0 15px;
 }
-
 #pesquisaboleto {
-  padding: 15px;
+  padding: 10px;
   border: 1px #4468b2 solid;
   margin-right: 15px;
   border-radius: 15px;
 }
 .pesquisa button {
-  height: 100%;
+  height: 90%;
   background: none;
   border: none;
 }
@@ -42,13 +43,13 @@ header {
 .searchImg {
   display: flex;
   justify-content: center;
-  height: 50%;
+  height: 40%;
   background-image: 50%;
   background-position: center;
   background-size: cover;
 }
 .user {
-  height: 80%;
+  height: 75%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,7 +68,7 @@ header {
 }
 
 .notifications {
-  height: 80%;
+  height: 60%;
   display: flex;
   align-items: center;
   border-radius: 100%;
@@ -83,173 +84,112 @@ header {
   height: 80%;
 }
 
-/* filtros no sistema de pesquisa */
-.filtros {
-  margin-top: 15px;
-  display: flex;
-  height: 100px;
-  padding: 50px;
-  align-items: center;
-  justify-content: space-around;
-  border-bottom: 1px solid blanchedalmond;
-}
-
-.dataAtual {
-  height: 100%;
-  display: flex;
-  font-weight: bold;
-  align-items: center;
-  justify-content: center;
-}
-.dataFiltro {
-  width: 20%;
-}
-.dataposition {
-  text-align: center;
-}
-.datas {
-  margin: auto;
-  align-items: center;
-}
-.dataInicio {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.dataFinal {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.valores {
-  width: 25%;
-}
-.valores div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-
 /* secao dos conteiners */
 .conteinerAreas {
-  height: 80%;
+  height: 85%;
   overflow: hidden;
   display: flex;
-  width: 100%;
-}
-
-.boletosposition {
-  text-align: center;
-  padding: 15px;
-}
-
-.boletos,
-.valoresConteiner {
-  height: 100%;
-}
-
-.boletos {
-  width: 65%;
-  border-right: 1px #4468b2 solid;
-}
-
-.boletos ul {
-  height: 100%;
-  align-items: flex-start;
-}
-.boletos ul li {
-  margin: 15px;
-  border: 1px solid gray;
-  height: 80px;
-  list-style: none;
   border-radius: 15px;
-  overflow: hidden;
+  margin: 30px;
+  justify-content: center;
+  align-items: center;
 }
-.item {
-  display: flex;
+.boletos {
   height: 100%;
+  background-color: #4468b2;
+  width: 65%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.filtros {
+  height: 40%;
+  background-color: antiquewhite;
+  align-items: center;
+  display: flex;
+}
+
+.filtros div {
+  height: 99%;
+  background-color: #4468b2;
+  margin: 5px;
+  width: 50%;
+  border-radius: 10px;
   padding: 5px;
+}
+.vencimentos-boletos {
+  height: 60%;
+  padding: 10px;
+  background-color: whitesmoke;
+}
+
+.ordenar {
+  height: 10%;
+  display: flex;
   align-items: center;
-  background-color: aliceblue;
   justify-content: space-between;
+  margin: 3px 0;
+}
+.ordenar-conteiner {
+  display: flex;
+  height: 70%;
+  padding: 0 15px;
+  border-radius: 5px;
+  border: 1px solid #fdfdfd;
+
 }
 
-.diaVencimento {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-right: 1px solid grey;
-}
 
-.nomeBoleto {
-  flex: 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  border-right: 1px solid grey;
-}
 
-.statusBoleto {
-  flex: 1;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-right: 1px solid grey;
-}
 
-.statusBoleto img {
-  background-image: 100%;
-  height: 90%;
-}
-.notificaoBoleto {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: aqua;
-}
 
-.valoresConteiner {
-  display: flex;
+
+
+
+
+
+
+/* parte da direita */
+.carteira {
   width: 35%;
   height: 100%;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  
-}
-.conteinerItens {
   border-radius: 15px;
-  border: #4468b2 1px solid;
-  background-color: aquamarine; 
-  width: 90%;
+  background-color: aquamarine;
+}
+
+.saldo {
+  margin: 7px;
+  height: 60%;
+  border-radius: 15px;
+  background-color: #4468b2;
+}
+.despesas {
+  margin: 7px;
+  padding: 5px;
+  height: 40%;
+  background-color: red;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.despesas h3 {
+  height: 10%;
+  margin-left: 10px;
+}
+.vencimentos {
   height: 90%;
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
-.carteira {
-  height: 30%;
-  border: 1px solid red;
-  width: 100%;
-  border-radius: 15px;
-  padding: 10px;
-  
-}
-
-.carteira p {
-  text-align: center;
-  font-weight: 700;
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-.conta h3 {
-margin-bottom: 5px;
-padding-bottom: 10px;
-}
-
-.conta {
-  border-bottom: #4468b2 1px solid;
+.vencimentos div {
+  border-radius: 10px;
+  background-color: #4468b2;
+  height: 40%;
+  margin: 10px;
 }
