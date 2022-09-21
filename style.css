@@ -93,18 +93,17 @@ header {
   margin: 30px;
   justify-content: center;
   align-items: center;
+  background-color: whitesmoke;
 }
 .boletos {
   height: 100%;
-  background-color: #4468b2;
-  width: 65%;
+  width: 64%;
   padding: 10px;
   display: flex;
   flex-direction: column;
 }
 .filtros {
-  height: 40%;
-  background-color: antiquewhite;
+  height: 35%;
   align-items: center;
   display: flex;
 }
@@ -118,9 +117,8 @@ header {
   padding: 5px;
 }
 .vencimentos-boletos {
-  height: 60%;
-  padding: 10px;
-  background-color: whitesmoke;
+  height: 65%;
+  padding: 5px;
 }
 
 .ordenar {
@@ -130,24 +128,41 @@ header {
   justify-content: space-between;
   margin: 3px 0;
 }
+
+.ordenar p {
+  margin-left: 15px;
+  font-weight: 700;
+}
+
 .ordenar-conteiner {
   display: flex;
-  height: 70%;
+  height: 75%;
   padding: 0 15px;
   border-radius: 5px;
   border: 1px solid #fdfdfd;
-
 }
 
+.conteiner-boletos-vencimentos {
+  height: 90%;
+  margin-top: 5px;
+}
+.conteiner-boletos-vencimentos ul {
+  height: 100%;
+  overflow: scroll;
+  overflow: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  list-style: none;
+  text-decoration: none;
+}
 
-
-
-
-
-
-
-
-
+.conteiner-boletos-vencimentos ul li {
+  height: 75px;
+  padding: 5px;
+  background-color: red;
+  margin: 15px;
+  border-radius: 15px;
+}
 
 /* parte da direita */
 .carteira {
@@ -157,7 +172,6 @@ header {
   flex-direction: column;
   justify-content: center;
   border-radius: 15px;
-  background-color: aquamarine;
 }
 
 .saldo {
@@ -170,7 +184,6 @@ header {
   margin: 7px;
   padding: 5px;
   height: 40%;
-  background-color: red;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -182,7 +195,6 @@ header {
 }
 .vencimentos {
   height: 90%;
-  background-color: blue;
   display: flex;
   flex-direction: column;
   justify-content: center;
