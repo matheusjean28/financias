@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
+    <script src="/script.js" defer ></script>
+
 </head>
 
 <body>
@@ -30,50 +32,37 @@
     <section class="conteinerAreas">
         <div class="boletos">
             <div class="filtros">
-                <div class="card-filtros-1"></div>
+                <div class="card-filtros-1">
+                        <input id="name" type="text" placeholder="nome"/>
+                        <input id="data" type="text" placeholder="data"/>
+                        <input id="price" type="text" placeholder="preco"/>
+
+                        <button id="submit">enviar</button>
+                </div>
                 <div class="card-filtros-2"></div>
             </div>
 
             <div class="vencimentos-boletos">
-                <div class="ordenar">
+                <div class="ordenar" >
                     <p>Seus Boletos</p>
-                        <select name="filtrosBoletosStatus" class="ordenar-conteiner">
-                            <option value="volvo">Data</option>
-                            <option value="saab">Nome</option>
-                            <option value="fiat">Valor</option>
-                            <option value="audi">Pagamento</option>
-                          </select> 
+                    <select name="filtrosBoletosStatus" class="ordenar-conteiner">
+                        <option value="volvo">Data</option>
+                        <option value="saab">Nome</option>
+                        <option value="fiat">Valor</option>
+                        <option value="audi">Pagamento</option>
+                    </select>
                 </div>
-                
-                <div class="conteiner-boletos-vencimentos">
-                    <ul>
-                        <li>
-                            <div class="item-lista-boleto">
-                                a
-                            </div>
-                        </li>
-                        <li>
-                            <div class="item-lista-boleto">
-                                a
-                            </div>
-                        </li>
-                        <li>
-                            <div class="item-lista-boleto">
-                                a
-                            </div>
-                        </li>
-                        <li>
-                            <div class="item-lista-boleto">
-                                a
-                            </div>
-                        </li>
-                        <li>
-                            <div class="item-lista-boleto">
-                                a
-                            </div>
-                        </li>  <li>
-                            <div class="item-lista-boleto">
-                                a
+
+                <div   class="conteiner-boletos-vencimentos">
+                    <ul id="ul-lista">
+                        <li class="">
+                        <div  class="item-lista-boleto ">
+                                <div class="img-item"><img src="/src/cronometro.png" alt=""></div>
+                                <div class="tag-item">CONTA DE AGUA</div>
+                                <div class="date-item">27/03/2022</div>
+                                <div class="price-item"><b>R$</b><p>_127,90</p>
+                                </div>
+                                <div class="more-item"><img src="/more.png" alt=""></div>
                             </div>
                         </li>
                     </ul>
