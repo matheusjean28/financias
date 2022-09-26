@@ -162,66 +162,33 @@ header {
   margin: 15px;
   border-radius: 15px;
   box-shadow: 1px 1px 3px ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+.conteiner-boletos-vencimentos ul li button {
+  height: 100%;
+  padding:  0 20px;
+  background: none;
+  border: none;
+} 
+.conteiner-boletos-vencimentos ul li p {
+flex: 4;
+margin-left: 20px;
+}
+.conteiner-boletos-vencimentos ul li button img,.conteiner-boletos-vencimentos ul li img {
+  height: 50%;
+  
 }
 
-.item-lista-boleto {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  margin: 0 15px;
-  justify-content: space-between;
-}
 .pago {
 background-color: rgb(78, 228, 78);
 text-decoration: line-through;
 }
 
-.item-lista-boleto div {
-  height: 90%;
-  align-items: center;
-  display: flex;
-}
-.img-item {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.img-item img {
-  height: 70%;
-  background-position: cover;
-}
 
-.tag-item {
-  flex: 3;align-items: center;
-  display: flex;
-  justify-content: center;
-  font-weight: bold;
-}
-.date-item {
-  flex: 3;
-  font-style: italic;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-.price-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 3;
-}
-.more-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-}
-.more-item img {
-  height: 50%;
-  background-position: cover;
-}
 
 /* parte da direita */
 .carteira {
@@ -263,4 +230,10 @@ text-decoration: line-through;
   background-color: #4468b2;
   height: 40%;
   margin: 10px;
+}
+
+
+.card1 {
+  display: flex;
+  align-items: center;
 }
