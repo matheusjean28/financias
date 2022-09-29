@@ -18,10 +18,11 @@ let arraydedados = []
 
 
 function Valores() {
+
     let values = {
         nome: document.getElementById('name'),
         data: document.getElementById('data'),
-        preco: document.getElementById('price')
+        preco: document.getElementById('price'),
     }
     //tratamento do preco para string vazia
     if (values.preco.value.trim() === '') {
@@ -45,29 +46,42 @@ function Valores() {
         return
     }
     else {
-        let dadosData = { nome: nome.value, data: data.value, preco: preco.value }
+
+        let dadosData = { nome: nome.value, data: data.value, preco: preco.value, 
+            }
         arraydedados.push(dadosData)
         return arraydedados
     }
 }
 
 
+// antes de criar o elemento
 
 
 //criar elemento 
 function criarElement() {
-
-    Array.from(arraydedados.map((i,e,d) => {
-    
-        console.log("index é",i.nome, i.data)
-    let item = document.createElement('li')
-    if(item.innerHTML === i.nome)
-    {
-        console.log("este nome ja esta sendo usado")
-        return 
+    // verificar se existem filhos na ul 
+    if(list.childElementCount <= 0){
+        
     }
-    if(item.innerHTML === i.data){
-        return 
+    else {
+        // remover e fazer um novo map retornando a lista atualizada
+        // se existir 
+        console.log('maior que zero')
+        list.innerHTML = ''
+        console.log('removendo elementos filhos')
+    }
+    
+    Array.from(arraydedados.map((i,e,d) => {
+        
+        let item = document.createElement('li')
+        if(item.innerHTML === i.nome)
+        {
+            console.log("este nome ja esta sendo usado")
+            return 
+        }
+        if(item.innerHTML === i.data){
+            return 
     }
     if(item.innerHTML === i.preco){
         return 
@@ -78,9 +92,9 @@ function criarElement() {
         item.classList.add('pago')
         item.innerHTML = `<button id="btnOk"><img src="/evento.png" alt=""></button><p>${i.nome}</p><p>${i.data}</p><p id="valor"><b></b>${i.preco}</p><img src="/more.png" alt="">`
         list.appendChild(item)
-        } 
-    }
-    )
+    } 
+}
+)
 
 )
 }
@@ -94,8 +108,10 @@ enviar.addEventListener('click', (e) => {
     e.preventDefault()
     Valores()
     console.log(arraydedados.length)
-    // console.log(typeof(arraydedados))
     // limparInputs()
     criarElement()
+
+    
+    
 })
 
