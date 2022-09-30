@@ -43,10 +43,10 @@ function Valores() {
     //tratamento do nome 
     if (values.nome.value.trim() === '') {
         console.log('O nome nao pode estar vazio ')
-        return
+        nome.classList.add('invalid')
     }
     else {
-
+        nome.classList.remove('invalid')
         let dadosData = { nome: nome.value, data: data.value, preco: preco.value, 
             }
         arraydedados.push(dadosData)
@@ -89,7 +89,6 @@ function criarElement() {
     else{
         
         list.appendChild(item)
-        item.classList.add('pago')
         item.innerHTML = `<button id="btnOk"><img src="/evento.png" alt=""></button><p>${i.nome}</p><p>${i.data}</p><p id="valor"><b></b>${i.preco}</p><img src="/more.png" alt="">`
         list.appendChild(item)
     } 

@@ -237,3 +237,7 @@ text-decoration: line-through;
   display: flex;
   align-items: center;
 }
+
+.invalid {
+  border: 2px solid red;
+}
