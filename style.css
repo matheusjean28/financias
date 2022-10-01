@@ -161,7 +161,7 @@ header {
   padding: 5px;
   margin: 15px;
   border-radius: 15px;
-  box-shadow: 1px 1px 3px ;
+  box-shadow: 1px 1px 3px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -169,26 +169,23 @@ header {
 }
 .conteiner-boletos-vencimentos ul li button {
   height: 100%;
-  padding:  0 20px;
+  padding: 0 20px;
   background: none;
   border: none;
-} 
-.conteiner-boletos-vencimentos ul li p {
-flex: 4;
-margin-left: 20px;
 }
-.conteiner-boletos-vencimentos ul li button img,.conteiner-boletos-vencimentos ul li img {
+.conteiner-boletos-vencimentos ul li p {
+  flex: 4;
+  margin-left: 20px;
+}
+.conteiner-boletos-vencimentos ul li button img,
+.conteiner-boletos-vencimentos ul li img {
   height: 50%;
-  
 }
 
 .pago {
-background-color: rgb(78, 228, 78);
-text-decoration: line-through;
+  background-color: rgb(78, 228, 78);
+  text-decoration: line-through;
 }
-
-
-
 
 /* parte da direita */
 .carteira {
@@ -203,8 +200,9 @@ text-decoration: line-through;
 .saldo {
   margin: 7px;
   height: 60%;
+  box-shadow: 1px 5px 12px ;
   border-radius: 15px;
-  background-color: #4468b2;
+  background-image: linear-gradient(25deg, #0c2e4d,  #47a4c4,#47a4c4);
 }
 .despesas {
   margin: 7px;
@@ -230,14 +228,47 @@ text-decoration: line-through;
   background-color: #4468b2;
   height: 40%;
   margin: 10px;
+  box-shadow: 1px 5px 12px ;
+  background-image: linear-gradient(25deg, #0c2e4d,  #47a4c4,#47a4c4);
 }
-
 
 .card1 {
   display: flex;
   align-items: center;
+  height: 100%;
+  
+}
+.card-filtros-1 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  background-color: #410586;
+  background-image: linear-gradient(25deg, #410586,  #47a4c4,#47a4c4);
 }
 
+.card-filtros-1 input {
+  height: 25px;
+  width: 60%;
+  margin: 15px 0;
+  padding: 15px;
+  border-radius: 7px;
+  border: #7a7e81 2px solid;
+  box-shadow: 1px 1px 5px ;
+}
+
+.card-filtros-1 button {
+  border: 1px solid white;
+  color: black ;
+  padding:5px 30px;
+  box-shadow: 5px 1px 12px ;
+
+  border-radius: 7px;
+  font-weight: 900;
+}
+/* classe aplicada se o valor do input for um valor  */
+/* negativo ou invalido */
 .invalid {
-  border: 2px solid red;
+  border: 3px solid red;
 }
