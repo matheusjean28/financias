@@ -37,7 +37,7 @@
                     <input id="data" type="date" placeholder="data" />
                     <input id="price" type="text" placeholder="preco" />
 
-                    <button id="submit">enviar</button>
+                    <button id="submit">Adicionar</button>
                 </div>
                 <div class="card-filtros-2"></div>
             </div>
@@ -45,11 +45,11 @@
             <div class="vencimentos-boletos">
                 <div class="ordenar">
                     <p>Seus Boletos</p>
-                    <select name="filtrosBoletosStatus" class="ordenar-conteiner">
-                        <option value="volvo">Data</option>
-                        <option value="saab">Nome</option>
-                        <option value="fiat">Valor</option>
-                        <option value="audi">Pagamento</option>
+                    <select id='filtrosBoletosStatus' name="filtrosBoletosStatus" class="ordenar-conteiner">
+                        <option value="data">Data</option>
+                        <option value="nome">Nome</option>
+                        <option value="valor">Valor</option>
+                        <option value="pagamento">Pagamento</option>
                     </select>
                 </div>
 
@@ -64,6 +64,7 @@
                             </p>
                             <img src="/more.png" alt="">
                         </li>
+                      
                     </ul>
                 </div>
 
@@ -76,12 +77,12 @@
                 <div class="vencimentos">
                     <div class="card1">
                         <div class="card1-vencimento-do-dia">
-                            <h3>Vencimentos de Hoje</h3>
+                            <h3>Totais de vencimentos</h3>
                             <img src="/data-limite.png" alt="">
                         </div>
                         <div class="balanco-gastos">
                             <p>Seus gastos</p>
-                            <h1 id="total"> R$ Total</h1>
+                            <h1 id="total"> R$ Você ainda não tem <br> boletos cadastrados</h1>
                         </div>
                     </div>
                 </div>
