@@ -64,8 +64,7 @@ function Valores() {
 //criar elemento 
 function criarElement() {
     // verificar se existem filhos na ul 
-    if (list.childElementCount <= 0) {
-    }
+    if (list.childElementCount <= 0) { }
     else {
         // remover e fazer um novo map retornando a lista atualizada
         // se existir 
@@ -91,31 +90,32 @@ function criarElement() {
             item.innerHTML = `<button id="btnOk"><img src="/evento.png" alt=""></button><p>${i.nome}</p><p>${i.data}</p><p id="valor"><b>R$</b>${i.preco}</p><img src="/more.png" alt="">`
             list.appendChild(item)
         }
-    }
-    ))
+    }))
 }
 
+function somarBoletos() {
+    let total = document.getElementById('total')
+    let soma = 0
+    for (var i = 0; i < arraydedados.length; i++) {
+        let atual = parseFloat(arraydedados[i].preco)
+        let depois = 0
+         
 
-//monitora botoes da ul
-function imgClick() {
-    if (list.childElementCount <= 0) {
-    } 
-    {
-        let getlista = document.getElementById('ul-lista')
-        for( let li in getlista){
-            
-
-
-        }
-        
+        total.innerText = ` ${(soma += (atual + depois)).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`
     }
 }
+
+
+
+
+
 
 enviar.addEventListener('click', (e) => {
     e.preventDefault()
     Valores()
     criarElement()
-    imgClick()
+    somarBoletos()
+
 })
 
 
@@ -123,11 +123,3 @@ enviar.addEventListener('click', (e) => {
 
 
 
-
-
-// if (document.readyState === "loading") {  // Ainda carregando
-//     document.addEventListener("DOMContentLoaded", console.log('o site ainda esta carregando'));
-// }
-// else {  // `DOMContentLoaded` foi disparado
-//     imgClick();
-// }

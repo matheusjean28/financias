@@ -213,7 +213,7 @@ header {
   flex-direction: column;
   justify-content: center;
 }
-.despesas h3 {
+.despesas > h3 {
   height: 10%;
   margin-left: 10px;
 }
@@ -223,21 +223,67 @@ header {
   flex-direction: column;
   justify-content: center;
 }
-.vencimentos div {
+.card1 {
+  height: 100%;
+  padding: 5px;
   border-radius: 10px;
-  background-color: #4468b2;
-  height: 40%;
-  margin: 10px;
   box-shadow: 1px 5px 12px ;
   background-image: linear-gradient(25deg, #0c2e4d,  #47a4c4,#47a4c4);
+  display: flex;
+  flex-direction: column;
 }
 
-.card1 {
+.card1-vencimento-do-dia {
+  height: 30%;
   display: flex;
   align-items: center;
-  height: 100%;
-  
+  justify-content: space-between;
+  margin: auto 10px;
 }
+
+.card1-vencimento-do-dia > img {
+  height: 65%;
+  margin-right: 5px;
+  max-width: 75%;
+
+}
+.balanco-gastos {
+  margin: auto 10px;
+  height: 70%;
+  align-items: center;
+  justify-content: space-between;
+}
+  
+.balanco-gastos > p {
+  margin-bottom: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .card-filtros-1 {
   display: flex;
   align-items: center;
