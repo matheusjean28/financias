@@ -108,9 +108,8 @@ header {
   display: flex;
 }
 
-.filtros div {
+.filtros > div {
   height: 99%;
-  background-color: #4468b2;
   margin: 5px;
   width: 50%;
   border-radius: 10px;
@@ -261,29 +260,6 @@ header {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .card-filtros-1 {
   display: flex;
   align-items: center;
@@ -316,5 +292,27 @@ header {
 /* classe aplicada se o valor do input for um valor  */
 /* negativo ou invalido */
 .invalid {
-  border: 3px solid red;
+  border: 30px solid red;
+}
+
+
+ion-icon{ font-size: 30px;}
+
+.iconPago {
+  color: rgb(255, 255, 255);
+}
+
+/*card-filtros-2*/
+.card-filtros-2 {
+  background-color: yellow;
+  height: 100%;
+
+}
+.conteinerDatas {
+  height: 40%;
+  display: flex;
+}
+
+.conteinerDatas > h4 {
+  margin-right: 10px;
 }

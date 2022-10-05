@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <script src="/script.js" defer></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,7 +41,12 @@
 
                     <button id="submit">Adicionar</button>
                 </div>
-                <div class="card-filtros-2"></div>
+                <div class="card-filtros-2">
+                    <div class="conteinerDatas">
+                        <h4>Hoje é:</h4>
+                        <p id="dataAtual"></p>
+                    </div>
+                </div>
             </div>
 
             <div class="vencimentos-boletos">
@@ -55,16 +62,19 @@
 
                 <div class="conteiner-boletos-vencimentos">
                     <ul id="ul-lista">
-                        <li><button id="btnOk"><img src="/evento.png" alt=""></button>
+
+                        <li><button id="btnOk">
+                                <ion-icon name="time"></ion-icon>
+                            </button>
                             <p>nome</p>
                             <p>data</p>
                             <p id="valor">
-                                <b></b>
-                                preco
+                            <b></b>
+                            preco
                             </p>
                             <img src="/more.png" alt="">
                         </li>
-                      
+
                     </ul>
                 </div>
 
@@ -90,8 +100,6 @@
         </div>
     </section>
 </body>
-
-<script src="/script.js" defer></script>
 
 
 </html>

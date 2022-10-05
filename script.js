@@ -10,13 +10,24 @@ let select = document.getElementById('filtrosBoletosStatus')
 //lista
 let list = document.getElementById('ul-lista')
 
+function pegarData() {
+    const date = new Date()
+    const dia = String(date.getDate()).padStart(2, '0')
+    const mes = String(date.getMonth() + 1).padStart(2, '0')
+    const ano = date.getFullYear()
+    const Hoje = `${ano}-${mes}-${dia}`
+    let dataatual = document.getElementById('dataAtual')
+    console.log(dataatual.innerText = `${Hoje}`)
+
+} pegarData()
+
 //funcoes uteis 
 function limparInputs() {
     nome.value = ''
     data.value = ''
     price.value = ''
 }
-let arraydedados =[]
+let arraydedados = []
 
 //pegar os valores do input e valida cada um deles
 function Valores() {
@@ -59,6 +70,7 @@ function Valores() {
             nome: nome.value, data: data.value, preco: preco.value,
         }
         arraydedados.push(dadosData)
+        limparInputs()
 
         return arraydedados
     }
@@ -89,7 +101,7 @@ function criarElement() {
         }
         else {
             list.appendChild(item)
-            item.innerHTML = `<button id="btnOk"><img src="/evento.png" alt=""></button><p>${i.nome}</p><p>${i.data}</p><p id="valor"><b>R$</b>${i.preco}</p><img src="/more.png" alt="">`
+            item.innerHTML = `<button id="btnOk"><ion-icon name="time"></ion-icon></button><p>${i.nome}</p><p>${i.data}</p><p id="valor"><b>R$</b>${i.preco}</p><img src="/more.png" alt="">`
             list.appendChild(item)
         }
     }))
@@ -112,28 +124,32 @@ enviar.addEventListener('click', (e) => {
     Valores()
     criarElement()
     somarBoletos()
+    let ulList = document.querySelectorAll('li')
 
+    for (let i = 0; i < ulList.length; i++) {
+        ulList[i].querySelector('button').onclick = (() => {
+            console.log('aqui', ulList[i])
+            ulList[i].classList.toggle("pago")
+            ulList[i].firstChild.classList.toggle("iconPago")
+        })
+    }
 })
 
 // o elemento é criado por padrao na forma em que é adicionado
 // é chamado diretamente dentro do criar elemento
 // criar uma funcao para ordenar o array e renderizar a lista
 
-function ordenarArray() {
-    if (select.value === 'data') {
-        console.log('igual a data')
-        console.log(arraydedados[0].data)
-        alert(`pegadinha do malandro yeye ${data.value}`)
+// function ordenarArray() {
+//     if (select.value === 'data') {
+//         console.log('igual a data')
+//         console.log(arraydedados[0].data)
+//         alert(`pegadinha do malandro yeye ${data.value}`)
 
-    } else {
-        console.log('diferente da data')
-    }
-}
+//     } else {
+//         console.log('diferente da data')
+//     }
+// }
 
 
 
-select.addEventListener('click', e => {
-    e.preventDefault()
-    console.log('foi clicado')
-    ordenarArray()
-})
+
