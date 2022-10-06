@@ -10,6 +10,7 @@ let select = document.getElementById('filtrosBoletosStatus')
 //lista
 let list = document.getElementById('ul-lista')
 
+//funcoes uteis 
 function pegarData() {
     const date = new Date()
     const dia = String(date.getDate()).padStart(2, '0')
@@ -17,11 +18,9 @@ function pegarData() {
     const ano = date.getFullYear()
     const Hoje = `${ano}-${mes}-${dia}`
     let dataatual = document.getElementById('dataAtual')
-    console.log(dataatual.innerText = `${Hoje}`)
 
 } pegarData()
 
-//funcoes uteis 
 function limparInputs() {
     nome.value = ''
     data.value = ''
@@ -35,6 +34,7 @@ function Valores() {
         nome: document.getElementById('name'),
         data: document.getElementById('data'),
         preco: document.getElementById('price'),
+        id: 0
     }
     //tratamento do preco para string vazia
     if (values.preco.value.trim() === '') {
@@ -62,16 +62,26 @@ function Valores() {
         nome.classList.add('invalid')
         alert('O nome do boleto nao pode estar vazio')
     }
+
+    // na hora de criar o Elementento 
+    // verificar se existe a propriedade id 
+    // se o id existir 
+    // verificar o valor 
+    // se o valor ja existir, encrementar mais um 
     else {
         nome.classList.remove('invalid')
         data.classList.remove('invalid')
         preco.classList.remove('invalid')
+
+        const geraId = (() => {
+            return Math.floor(Math.random() * values.preco.value);
+        })
+        let valorId = geraId();
+
         let dadosData = {
-            nome: nome.value, data: data.value, preco: preco.value,
+            nome: nome.value, data: data.value, preco: preco.value, id: valorId
         }
         arraydedados.push(dadosData)
-        limparInputs()
-
         return arraydedados
     }
 }
@@ -83,9 +93,7 @@ function criarElement() {
     else {
         // remover e fazer um novo map retornando a lista atualizada
         // se existir 
-        console.log('maior que zero')
         list.innerHTML = ''
-        console.log('removendo elementos filhos')
     }
     Array.from(arraydedados.map((i, e, d) => {
         let item = document.createElement('li')
@@ -101,8 +109,9 @@ function criarElement() {
         }
         else {
             list.appendChild(item)
-            item.innerHTML = `<button id="btnOk"><ion-icon name="time"></ion-icon></button><p>${i.nome}</p><p>${i.data}</p><p id="valor"><b>R$</b>${i.preco}</p><img src="/more.png" alt="">`
+            item.innerHTML = `<button id="btnOk"><p style="display:none ;">${i.id}</p><ion-icon name="time"></ion-icon></button><p>${i.nome}</p><p>${i.data}</p><p id="valor"><b>R$</b>${i.preco}</p><img src="/more.png" alt="">`
             list.appendChild(item)
+            limparInputs()
         }
     }))
 }
@@ -117,6 +126,16 @@ function somarBoletos() {
     }
 }
 
+function removerElemento() {
+    Array.from(arraydedados).filter((i)=> {
+        if(i.nome === 'matheus'){
+            // console.log(arraydedados.findIndex(i === 'matheus'))
+            return arraydedados
+        }
+    })
+    
+}
+
 
 // evento de clique no botao de adicionar        
 enviar.addEventListener('click', (e) => {
@@ -124,32 +143,20 @@ enviar.addEventListener('click', (e) => {
     Valores()
     criarElement()
     somarBoletos()
+    removerElemento()
+
     let ulList = document.querySelectorAll('li')
 
     for (let i = 0; i < ulList.length; i++) {
         ulList[i].querySelector('button').onclick = (() => {
-            console.log('aqui', ulList[i])
             ulList[i].classList.toggle("pago")
+            let indice = ulList[i].firstChild.firstChild.innerText
+            console.log(indice)
+
+
             ulList[i].firstChild.classList.toggle("iconPago")
+
+
         })
     }
 })
-
-// o elemento é criado por padrao na forma em que é adicionado
-// é chamado diretamente dentro do criar elemento
-// criar uma funcao para ordenar o array e renderizar a lista
-
-// function ordenarArray() {
-//     if (select.value === 'data') {
-//         console.log('igual a data')
-//         console.log(arraydedados[0].data)
-//         alert(`pegadinha do malandro yeye ${data.value}`)
-
-//     } else {
-//         console.log('diferente da data')
-//     }
-// }
-
-
-
-
