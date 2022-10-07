@@ -18,6 +18,7 @@ function pegarData() {
     const ano = date.getFullYear()
     const Hoje = `${ano}-${mes}-${dia}`
     let dataatual = document.getElementById('dataAtual')
+    dataatual.innerText = `${Hoje}`
 
 } pegarData()
 
@@ -34,7 +35,8 @@ function Valores() {
         nome: document.getElementById('name'),
         data: document.getElementById('data'),
         preco: document.getElementById('price'),
-        id: 0
+        id: 0,
+        status: 'aguardando'
     }
     //tratamento do preco para string vazia
     if (values.preco.value.trim() === '') {
@@ -79,7 +81,7 @@ function Valores() {
         let valorId = geraId();
 
         let dadosData = {
-            nome: nome.value, data: data.value, preco: preco.value, id: valorId
+            nome: nome.value, data: data.value, preco: preco.value, id: valorId, status: "aguardando"
         }
         arraydedados.push(dadosData)
         return arraydedados
@@ -111,29 +113,83 @@ function criarElement() {
             list.appendChild(item)
             item.innerHTML = `<button id="btnOk"><p style="display:none ;">${i.id}</p><ion-icon name="time"></ion-icon></button><p>${i.nome}</p><p>${i.data}</p><p id="valor"><b>R$</b>${i.preco}</p><img src="/more.png" alt="">`
             list.appendChild(item)
-            limparInputs()
+            // limparInputs()
         }
     }))
 }
 
+function verificarstatus(){
+    let aVencer = Array.from(arraydedados).map((i) => {
+        if (i.status === 'aguardando') {
+            return i.preco
+        } 
+        else {
+            return 0
+        }
+    })
+    return aVencer
+}
+
+
+
 function somarBoletos() {
     let total = document.getElementById('total')
-    let soma = 0
-    for (var i = 0; i < arraydedados.length; i++) {
-        let atual = parseFloat(arraydedados[i].preco)
-        let depois = 0
-        total.innerText = ` ${(soma += (atual + depois)).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`
+    let aVencer = verificarstatus()
+
+    if (aVencer.length <= 0) {
+        total.innerText = `R$ 0`
+        return console.log('array vazio')
+    }
+
+    else {
+        let atual = 0
+        let old = 0
+        for (var i = 0; i < aVencer.length; i++) {
+            
+            if (aVencer.length <= 0){
+                return 0
+            } 
+            else {
+            let current = parseInt( aVencer[i])
+            atual += old + current
+            total.innerText = ` ${(atual).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`
+            }
+        }
     }
 }
 
-function removerElemento() {
-    Array.from(arraydedados).filter((i)=> {
-        if(i.nome === 'matheus'){
-            // console.log(arraydedados.findIndex(i === 'matheus'))
-            return arraydedados
+// funcao para deletar o elemento do array 
+// function removerElemento(indice) {
+//     Array.from(arraydedados).filter((i) => {
+//         if (i.id === indice) {
+//             let id = i
+//             let indexDoIndice = arraydedados.indexOf(id, 0)
+//             // arraydedados.splice(indexDoIndice, 1)
+//             console.log(arraydedados)
+//             somarBoletos()
+//             return indexDoIndice
+//         }
+//     })
+
+// }
+
+
+function pagoOunao(indice) {
+    Array.from(arraydedados).filter((i) => {
+        if (i.id === indice) {
+            let id = i
+            let indexDoIndice = arraydedados.indexOf(id, 0)
+            if (i.status === "aguardando") {
+                arraydedados[indexDoIndice].status = "pago"
+                return arraydedados
+            }
+            else {
+                arraydedados[indexDoIndice].status = "aguardando"
+                return arraydedados
+            }
         }
     })
-    
+    somarBoletos()
 }
 
 
@@ -143,17 +199,15 @@ enviar.addEventListener('click', (e) => {
     Valores()
     criarElement()
     somarBoletos()
-    removerElemento()
+    verificarstatus()
 
     let ulList = document.querySelectorAll('li')
 
     for (let i = 0; i < ulList.length; i++) {
         ulList[i].querySelector('button').onclick = (() => {
+            let indice = parseInt(ulList[i].firstChild.firstChild.innerText)
+            pagoOunao(indice)
             ulList[i].classList.toggle("pago")
-            let indice = ulList[i].firstChild.firstChild.innerText
-            console.log(indice)
-
-
             ulList[i].firstChild.classList.toggle("iconPago")
 
 
