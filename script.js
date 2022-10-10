@@ -118,11 +118,11 @@ function criarElement() {
     }))
 }
 
-function verificarstatus(){
+function verificarstatus() {
     let aVencer = Array.from(arraydedados).map((i) => {
         if (i.status === 'aguardando') {
             return i.preco
-        } 
+        }
         else {
             return 0
         }
@@ -145,14 +145,14 @@ function somarBoletos() {
         let atual = 0
         let old = 0
         for (var i = 0; i < aVencer.length; i++) {
-            
-            if (aVencer.length <= 0){
+
+            if (aVencer.length <= 0) {
                 return 0
-            } 
+            }
             else {
-            let current = parseInt( aVencer[i])
-            atual += old + current
-            total.innerText = ` ${(atual).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`
+                let current = parseInt(aVencer[i])
+                atual += old + current
+                total.innerText = ` ${(atual).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`
             }
         }
     }
@@ -181,10 +181,12 @@ function pagoOunao(indice) {
             let indexDoIndice = arraydedados.indexOf(id, 0)
             if (i.status === "aguardando") {
                 arraydedados[indexDoIndice].status = "pago"
+
                 return arraydedados
             }
             else {
                 arraydedados[indexDoIndice].status = "aguardando"
+
                 return arraydedados
             }
         }
