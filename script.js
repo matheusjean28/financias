@@ -76,7 +76,7 @@ function Valores() {
         preco.classList.remove('invalid')
 
         const geraId = (() => {
-            var dt = new Date (). getTime (); 
+            var dt = new Date().getTime();
             console.log(dt)
             return Math.floor(Math.random() * dt);
         })
@@ -132,8 +132,6 @@ function verificarstatus() {
     return aVencer
 }
 
-
-
 function somarBoletos() {
     let total = document.getElementById('total')
     let aVencer = verificarstatus()
@@ -175,7 +173,6 @@ function somarBoletos() {
 
 // }
 
-
 function pagoOunao(indice) {
     Array.from(arraydedados).filter((i) => {
         if (i.id === indice) {
@@ -191,9 +188,37 @@ function pagoOunao(indice) {
             }
         }
     })
-somarBoletos()
+    somarBoletos()
 }
 
+function filtroSelect(tipodefiltro) {
+    let filtro = select.value
+
+    if (filtro === 'data') {
+        console.log('o valor de filtro é data')
+    }
+    if (filtro === 'nome') {
+        console.log('o valor de filtro é nome')
+
+    }
+    if (filtro === 'valor') {
+        console.log('o valor de filtro é valor')
+
+    }
+    if (filtro === 'pagamento') {
+        console.log('o valor de filtro é pagamento')
+        let arrayPagamento = Array.from(arraydedados).filter(()=> {
+            
+        })
+
+    }
+
+}
+
+select.addEventListener('click', e => {
+    e.preventDefault()
+    filtroSelect()
+})
 
 // evento de clique no botao de adicionar        
 enviar.addEventListener('click', (e) => {
@@ -213,3 +238,5 @@ enviar.addEventListener('click', (e) => {
         })
     }
 })
+
+
