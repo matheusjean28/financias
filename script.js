@@ -76,7 +76,9 @@ function Valores() {
         preco.classList.remove('invalid')
 
         const geraId = (() => {
-            return Math.floor(Math.random() * values.preco.value);
+            var dt = new Date (). getTime (); 
+            console.log(dt)
+            return Math.floor(Math.random() * dt);
         })
         let valorId = geraId();
 
@@ -181,17 +183,15 @@ function pagoOunao(indice) {
             let indexDoIndice = arraydedados.indexOf(id, 0)
             if (i.status === "aguardando") {
                 arraydedados[indexDoIndice].status = "pago"
-
                 return arraydedados
             }
             else {
                 arraydedados[indexDoIndice].status = "aguardando"
-
                 return arraydedados
             }
         }
     })
-    somarBoletos()
+somarBoletos()
 }
 
 
@@ -202,17 +202,14 @@ enviar.addEventListener('click', (e) => {
     criarElement()
     somarBoletos()
     verificarstatus()
-
+    console.log(arraydedados)
     let ulList = document.querySelectorAll('li')
-
     for (let i = 0; i < ulList.length; i++) {
         ulList[i].querySelector('button').onclick = (() => {
             let indice = parseInt(ulList[i].firstChild.firstChild.innerText)
             pagoOunao(indice)
             ulList[i].classList.toggle("pago")
             ulList[i].firstChild.classList.toggle("iconPago")
-
-
         })
     }
 })

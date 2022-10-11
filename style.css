@@ -199,9 +199,9 @@ header {
 .saldo {
   margin: 7px;
   height: 60%;
-  box-shadow: 1px 5px 12px ;
+  box-shadow: 1px 5px 12px;
   border-radius: 15px;
-  background-image: linear-gradient(25deg, #0c2e4d,  #47a4c4,#47a4c4);
+  background-image: linear-gradient(25deg, #0c2e4d, #47a4c4, #47a4c4);
 }
 .despesas {
   margin: 7px;
@@ -226,8 +226,8 @@ header {
   height: 100%;
   padding: 5px;
   border-radius: 10px;
-  box-shadow: 1px 5px 12px ;
-  background-image: linear-gradient(25deg, #0c2e4d,  #47a4c4,#47a4c4);
+  box-shadow: 1px 5px 12px;
+  background-image: linear-gradient(25deg, #0c2e4d, #47a4c4, #47a4c4);
   display: flex;
   flex-direction: column;
 }
@@ -244,7 +244,6 @@ header {
   height: 65%;
   margin-right: 5px;
   max-width: 75%;
-
 }
 .balanco-gastos {
   margin: auto 10px;
@@ -252,13 +251,10 @@ header {
   align-items: center;
   justify-content: space-between;
 }
-  
+
 .balanco-gastos > p {
   margin-bottom: 15px;
 }
-
-
-
 
 .card-filtros-1 {
   display: flex;
@@ -267,28 +263,27 @@ header {
   justify-content: center;
   height: 100%;
   background-color: #410586;
-  background-image: linear-gradient(25deg, #410586,  #47a4c4,#47a4c4);
+  background-image: linear-gradient(25deg, #410586, #47a4c4, #47a4c4);
 }
 .card-filtros-1 h3 {
   height: 10px;
 }
 
-
-.card-filtros-1  input {
+.card-filtros-1 input {
   height: 25px;
   width: 60%;
   margin: 15px 0;
   padding: 15px;
   border-radius: 7px;
   border: #7a7e81 2px solid;
-  box-shadow: 1px 1px 5px ;
+  box-shadow: 1px 1px 5px;
 }
 
 .card-filtros-1 > button {
   border: 1px solid white;
-  color: black ;
-  padding:5px 30px;
-  box-shadow: 5px 1px 12px ;
+  color: black;
+  padding: 5px 30px;
+  box-shadow: 5px 1px 12px;
   border-radius: 7px;
   font-weight: 900;
 }
@@ -298,8 +293,9 @@ header {
   border: 30px solid red;
 }
 
-
-ion-icon{ font-size: 30px;}
+ion-icon {
+  font-size: 30px;
+}
 
 .iconPago {
   color: rgb(255, 255, 255);
@@ -309,13 +305,61 @@ ion-icon{ font-size: 30px;}
 .card-filtros-2 {
   background-color: yellow;
   height: 100%;
-
 }
-.conteinerDatas {
+
+.cardDataAvisos {
   height: 40%;
   display: flex;
 }
+.cardDataAvisos > div {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fdfdfd;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+.conteinerDatas {
+  height: 100%;
+  display: flex;
+  background-color: #410586;
+}
 
+.conteinerAvisos {
+  height: 100%;
+  text-align: center;
+}
+.conteinerAvisos > h3{
+  font-weight: 100;
+  font-size: 15px;
+}
 .conteinerDatas > h4 {
   margin-right: 10px;
+}
+
+.conteinerBuscarData {
+  height: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  background-color: #fdfdfd;
+  width: 48%;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px 5px;
+}
+
+.conteinerBuscarData > div {
+  height: 90%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  justify-content: space-evenly;
+}
+.conteinerBuscarData > div >input {
+  border: none;
+  background: none;
 }
