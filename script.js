@@ -29,6 +29,9 @@ function limparInputs() {
 }
 let arraydedados = []
 
+let arrayInicialValue = arraydedados
+console.log('este é p valor de arrayinicialvalue', arrayInicialValue)
+
 //pegar os valores do input e valida cada um deles
 function Valores() {
     let values = {
@@ -77,7 +80,6 @@ function Valores() {
 
         const geraId = (() => {
             var dt = new Date().getTime();
-            console.log(dt)
             return Math.floor(Math.random() * dt);
         })
         let valorId = geraId();
@@ -90,16 +92,77 @@ function Valores() {
     }
 }
 
+function filtroSelect() {
+    let filtro = select.value
+    arrayInicialValue = []//limpa 
+    let arrauValueRender = []//inicia com o array vazio para receber os novos elementos
+    if( filtro === 'data'){
+        arrauValueRender.push(Array.from(arraydedados).map((i) => {
+            if(i){
+                return i
+            }
+        }))
+        
+        return arrauValueRender[0]
+    }
+    if( filtro === 'nome'){
+
+        
+        arrauValueRender.push(Array.from(arraydedados).sort((i) => {
+            if(i){
+                return i
+            }
+        }))
+        
+        return arrauValueRender[0]
+
+    }
+    if( filtro === 'pagamento'){
+        console.log('o valor do filtro é pagamento')
+        arrauValueRender.push(Array.from(arraydedados).map((i) => {
+            if(i){
+                return i
+            }
+        }))
+        
+        return arrauValueRender[0]
+    }
+    if( filtro === 'valor'){
+        console.log('o valor do filtro é preco')
+        arrauValueRender.push(Array.from(arraydedados).map((i) => {
+            if(i){
+                return i
+            }
+        }))
+        
+        return arrauValueRender[0]
+    }
+    else {
+        return arraydedados
+    }
+    console.log('render fora da funcao map',arrauValueRender)
+}
+
+
+
+
 //criar elemento 
 function criarElement() {
     // verificar se existem filhos na ul 
+    //a variavel abaixo é o retorno da funcao filtroSelect()
+let dadorender = filtroSelect()
+console.log(dadorender)
+
     if (list.childElementCount <= 0) { }
     else {
         // remover e fazer um novo map retornando a lista atualizada
         // se existir 
         list.innerHTML = ''
     }
-    Array.from(arraydedados.map((i, e, d) => {
+
+
+
+    Array.from(dadorender.map((i, e, d) => {
         let item = document.createElement('li')
         if (item.innerHTML === i.nome) {
             console.log("este nome ja esta sendo usado")
@@ -191,33 +254,10 @@ function pagoOunao(indice) {
     somarBoletos()
 }
 
-function filtroSelect(tipodefiltro) {
-    let filtro = select.value
-
-    if (filtro === 'data') {
-        console.log('o valor de filtro é data')
-    }
-    if (filtro === 'nome') {
-        console.log('o valor de filtro é nome')
-
-    }
-    if (filtro === 'valor') {
-        console.log('o valor de filtro é valor')
-
-    }
-    if (filtro === 'pagamento') {
-        console.log('o valor de filtro é pagamento')
-        let arrayPagamento = Array.from(arraydedados).filter(()=> {
-            
-        })
-
-    }
-
-}
-
-select.addEventListener('click', e => {
+select.addEventListener('change', e => {
     e.preventDefault()
     filtroSelect()
+    criarElement()
 })
 
 // evento de clique no botao de adicionar        
@@ -227,7 +267,6 @@ enviar.addEventListener('click', (e) => {
     criarElement()
     somarBoletos()
     verificarstatus()
-    console.log(arraydedados)
     let ulList = document.querySelectorAll('li')
     for (let i = 0; i < ulList.length; i++) {
         ulList[i].querySelector('button').onclick = (() => {
